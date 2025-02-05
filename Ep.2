@@ -1,0 +1,18 @@
+s=input("Enter the String")
+indexA=-1
+indexB=-1
+i=0
+while i<len(s):
+    if s[i]=='a':
+        indexA=i
+    else:
+        if s[i]=='b':
+            indexB=i
+            i=i+1
+
+
+            if indexA!=-1 and indexB!=-1:
+             if indexA>indexB :
+                   print("false")
+else:
+    print("True")
