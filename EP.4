@@ -1,0 +1,27 @@
+from contextlib import contextmanager
+
+@contextmanager
+def genericFileFunction(filename, method):
+    file = open(filename, method)
+    yield file
+    file.close()
+
+if __name__ == '__main__':
+   
+    with genericFileFunction('example.txt', 'w') as file:
+        file.write("This is line 1\n")
+        file.write("This is line 2\n")
+    
+    with genericFileFunction('example.txt', 'r') as file:
+        content = file.read()
+        print("Content after initial write:")
+        print(content)
+    
+    with genericFileFunction('example.txt', 'a') as file:
+        file.write("This is append line 3\n")
+        file.write("This is append line 4\n")
+  
+    with genericFileFunction('example.txt', 'r') as file:
+        updated_content = file.read()
+        print("Content after appending:")
+        print(updated_content)
