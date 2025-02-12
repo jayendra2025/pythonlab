@@ -1,0 +1,34 @@
+def find_first_occurrence(main_string, string1):
+ 
+    first_occurrence = main_string.find(string1)
+    return first_occurrence
+    
+def find_last_occurrence(main_string, string2):
+   
+    last_occurrence = main_string.rfind(string2)
+    return last_occurrence
+
+class conditionalStatements:
+    def checkString(self, s: str, string1: str, string2: str) -> bool:
+  
+        first_occurrence = find_first_occurrence(s, string1)
+        last_occurrence = find_last_occurrence(s, string2)
+        if first_occurrence == -1 or last_oocurrence == -1:
+            return True
+        if first_occurrence > last_occurrence:
+            return True
+        else:
+            return False
+
+
+main_string = input("Enter a pattern of a and b: ")
+string1 = "b"
+string2 = "a"
+
+
+checker = conditionalStatements()
+
+
+result = checker.checkString(main_string, string1, string2)
+
+print(result)
